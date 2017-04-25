@@ -7,6 +7,7 @@
     <body>
         <h4>Welcome, {{current_user.name}}</h4>
         <a href="/"><button>logout</button></a>
+        <a href="/user_info"><button>User Info</button></a>
         <div class="quotes">
             <h4>Quotable Quotes</h4>
             {%if quote%}
@@ -15,7 +16,7 @@
                 {%endfor%}
             {%endif%}
         </div>
-        
+
         <div class="fav_quotes">
             <h4>Favorite Quotes</h4>
             {%for favorite in favorites%}

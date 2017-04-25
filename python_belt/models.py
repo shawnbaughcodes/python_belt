@@ -18,6 +18,8 @@ class UserManager(models.Manager):
                 return result
             elif post['confirm_password'] != post['password']:
                 result['errors'].append('Passwords must match')
+            elif post['dob'] == "":
+                result['errors'].append('No Date of Birth')
 
                 return result
             else:

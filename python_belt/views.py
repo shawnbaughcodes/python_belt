@@ -44,6 +44,10 @@ def process_quote(request):
     else:
         quote = Quotes.objects.create(author=request.POST['author'],quote=request.POST['quote'], user_id=current_user(request))
         return render(request, 'python_belt/dashboard.html', quote)
+
+def user_info(request):
+    return render(request, 'python_belt/user_page.html')
+
 def logout(request):
     request.session.clear()
     return redirect('/')
