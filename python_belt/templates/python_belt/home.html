@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Home</title>
+    </head>
+    <body>
+        <h1>Hello{{user.name}}</h1>
+        <a href="/logout"><button>Logout</button></a>
+        <h4>Here's a list of your friends</h4>
+        {%for friend in friends%}
+            <p>{{friend.name}}</p>
+            <a href="/user/{{friend.id}}">View Profile</a>
+            <a href="/remove_friend/{{friend.id}}">Remove Friend</a>
+        {%endfor%}
+        <h5>Other users that are not your friend</h5>
+        {%for user in users%}
+            <a href="/user/{{user.id}}">{{user.name}}</a><a href="/add_friend/{{user.id}}"><button>Add Friend</button></a>
+        {%endfor%}
+    </body>
+</html>
